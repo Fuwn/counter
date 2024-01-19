@@ -1,14 +1,14 @@
 html
   head
     title='Urushi Counter'
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='icon', type='image/png', href='favicon.png')
-    link(rel='stylesheet', href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='icon' type='image/png' href='favicon.png')
+    link(rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css')
 
   body
     .tool
       code #{site}/get/@
-      input#name(type='text', placeholder=':name', style='display: inline-block; width: 80px; height: 1.4em; line-height: 1.4em; margin: 0 4px; vertical-align: middle;')
+      input#name(type='text' placeholder=':handle' style='display: inline-block; width: 80px; height: 1.4em; line-height: 1.4em; margin: 0 4px; vertical-align: middle;')
       code ?theme=
       select#theme(style='display: inline-block; height: 1.6em; line-height: 1.6em; font-size: 14px; margin: 0 4px; padding: 0 4px; vertical-align: middle;')
         option(value='urushi') urushi
@@ -18,24 +18,22 @@ html
         option(value='rule34') rule34
         option(value='gelbooru') gelbooru
         option(value='gelbooru-h') gelbooru-h
-      button#get(style='margin: 10px 0;') Get
+      button#get Generate
       img#result(style='display: block;')
 
       script.
-        var btn = document.getElementById('get'),
-            img = document.getElementById('result')
+        document.getElementById('get').addEventListener('click', () => {
+          const name = document.getElementById('name');
+          const text = name.value ? name.value.trim() : '';
+          const theme = document.getElementById('theme').value || 'moebooru';
 
-        btn.addEventListener('click', function() {
-          var name = document.getElementById('name'),
-              themeEl = document.getElementById('theme')
-          var text = name.value ? name.value.trim() : ''
-          var theme = themeEl.value || 'moebooru'
-          if(!text) {
-            alert('Please input counter name.')
+          if (!text) {
+            alert('Enter a valid counter handle to continue.');
+
             return
           }
 
-          img.src = '#{site}/get/@' + text + '?theme=' + theme
+          document.getElementById('result').src = `#{site}/get/@${text}?theme=${theme}`;
         })
 
     h2 Usage
