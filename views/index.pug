@@ -18,7 +18,7 @@ html
         option(value='rule34') rule34
         option(value='gelbooru') gelbooru
         option(value='gelbooru-h') gelbooru-h
-      button#get(style='margin: 10px 0;', onclick='_evt_push("click", "normal", "get_counter")') Get
+      button#get(style='margin: 10px 0;') Get
       img#result(style='display: block;')
 
       script.
@@ -39,18 +39,46 @@ html
         })
 
     h2 Usage
-    p(style='margin: 0;') Replace <code>:name</code> with your counter name.
+    p Replace <code>:example</code> with your counter's handle.
 
     h5 HTML
-    code &lt;img src="#{site}/get/@:name" alt=":name" />
+    code &lt;img src="#{site}/get/@:example" alt=":example" />
 
     h5 Markdown
-    code ![:name](#{site}/get/@:name)
+    code ![:example](#{site}/get/@:example)
 
     br
     br
 
     h2 Example
-    p(style='margin: 0;') <a href="#{site}/get/@index?theme=urushi" target="_blank"><code>#{site}/get/@index?theme=urushi</code></a>
+    p <a href="#{site}/get/@index?theme=urushi" target="_blank"><code>#{site}/get/@index?theme=urushi</code></a>
 
     p <img src="#{site}/get/@index?theme=urushi" alt="Urushi Counter" />
+
+    details
+      summary(style='display: inline-block;')
+        h3(style='display: inline-block; cursor: pointer; margin-bottom: 0;') More Examples (Click to Expand)
+
+      h3
+        a(href='https://space.bilibili.com/703007996' target="_blank") A-SOUL
+      <img src="#{site}/get/@demo?theme=asoul" alt="A-SOUL" />
+
+      h3
+        a(href='https://github.com/moebooru/moebooru' target="_blank") Moebooru
+      <img src="#{site}/get/@demo?theme=moebooru" alt="Moebooru" />
+
+      h3
+        a(href='https://github.com/moebooru/moebooru' target="_blank") Moebooru (Hentai)
+      <img src="#{site}/get/@demo?theme=moebooru-h" alt="Moebooru (Hentai)" />
+
+      h3
+        a(href='https://rule34.xxx/' target="_blank") Rule 34 (NSFW)
+      <img src="#{site}/get/@demo?theme=rule34" alt="Rule 34" />
+
+      h3
+        a(href='https://gelbooru.com/' target="_blank") Gelbooru (NSFW)
+      <img src="#{site}/get/@demo?theme=gelbooru" alt="Gelbooru" />
+
+      h3
+        a(href='https://gelbooru.com/' target="_blank") Gelbooru (Hentai)
+      <img src="#{site}/get/@demo?theme=gelbooru-h" alt="Gelbooru (Hentai)" />
