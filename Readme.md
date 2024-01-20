@@ -1,82 +1,49 @@
-# Moe-Counter
+# ☗ Counter
 
-多种风格可选的萌萌计数器
+> 多种风格可选的萌萌计数器
 
-![Moe-Counter](https://count.getloli.com/get/@Moe-counter.github)
+<img src="https://counter.due.moe/get/@counter.github?theme=urushi" width="50%">
 
-<details>
-<summary>More theme</summary>
+## Installation
 
-##### asoul
-![asoul](https://count.getloli.com/get/@demo?theme=asoul)
-
-##### moebooru
-![moebooru](https://count.getloli.com/get/@demo?theme=moebooru)
-
-##### rule34
-![Rule34](https://count.getloli.com/get/@demo?theme=rule34)
-
-##### gelbooru
-![Gelbooru](https://count.getloli.com/get/@demo?theme=gelbooru)</details>
-
-## Demo
-[https://count.getloli.com](https://count.getloli.com)
-
-## Usage
-
-### Install
-
-#### Run on Replit
-
-- Open the url [https://replit.com/@journeyad/Moe-Counter](https://replit.com/@journeyad/Moe-Counter)
-- Just hit the **Fork** button
-- And hit the **Run** button
-
-#### Deploying on your own server
+### Self-hosting
 
 ```shell
-$ git clone https://github.com/journey-ad/Moe-Counter.git
-$ cd Moe-Counter
+$ git clone https://github.com/Fuwn/counter.git
+$ cd counter
 $ yarn install
-
 $ yarn start
 ```
 
 ### Configuration
 
-`config.yml`
-
 ```yaml
+# config.yml
+
 app:
-  # site: https://count.getloli.com # your website
+  # site: https://counter.due.moe
   port: 3000
 
 db:
-  type: sqlite # sqlite or mongodb
+  type: sqlite # sqlite, mongodb
 ```
 
-If you use mongodb, you need to specify the environment variable `DB_URL`
+#### MongoDB
+
+Expose a `DB_URL` environment variable
 
 ```shell
-# eg:
-export DB_URL=mongodb+srv://account:passwd@***.***.***.mongodb.net/db_count
+export DB_URL=mongodb+srv://user:passwd@***.***.***.mongodb.net/db_count
 ```
 
-replit can use Secrets, [documentation](https://docs.replit.com/programming-ide/storing-sensitive-information-environment-variables)
+### Resource Attributions
 
-```
-DB_URL="mongodb+srv://account:passwd@***.***.***.mongodb.net/db_count"
-```
-
-## Credits
-
-*   [replit](https://replit.com/)
 *   [A-SOUL_Official](https://space.bilibili.com/703007996)
-*   [moebooru](https://github.com/moebooru/moebooru)
-*   rule34.xxx NSFW
-*   gelbooru.com NSFW
-*   [Icons8](https://icons8.com/icons/set/star)
+*   [Moebooru](https://github.com/moebooru/moebooru)
+*   [Rule 34](https://rule34.xxx) (NSFW)
+*   [Gelbooru](https://gelbooru.com) (NSFW)
 
-## License
+### License
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fjourney-ad%2FMoe-Counter.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fjourney-ad%2FMoe-Counter?ref=badge_large)
+This project is licensed with the [MIT License](LICENSE).
+
