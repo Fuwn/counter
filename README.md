@@ -4,36 +4,33 @@
 
 <img src="https://counter.due.moe/get/@counter.github?theme=urushi" width="50%">
 
-## Installation
+## Usage
 
-### Self-hosting
+### Local
 
 ```shell
 $ git clone https://github.com/Fuwn/counter.git
 $ cd counter
-$ yarn install
-$ yarn start
+$ npm install # Or Bun, Yarn, pNPM, etc.
+$ npm run start
 ```
 
-### Configuration
+### Docker
 
 ```yaml
-# config.yml
-
-app:
-  # site: https://counter.due.moe
-  port: 3000
-
-db:
-  type: sqlite # sqlite, mongodb
+docker run --volume 'counter:/app/data' -p '80:3000' --rm fuwn/urushi-counter:latest
 ```
+
+### Database
+
+`counter` will use SQLite by default, and will place the database file, `count.db`, within the `data/` directory of the root project folder.
 
 #### MongoDB
 
-Expose a `DB_URL` environment variable
+To use MongoDB instead of SQLite, expose a `DB_URL` environment variable.
 
 ```shell
-export DB_URL=mongodb+srv://user:passwd@***.***.***.mongodb.net/db_count
+export DB_URL=mongodb+srv://user:password@mongodb.example.com/counter
 ```
 
 ### Resource Attributions
